@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo App</title>
+    <title>Task Managament App</title>
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome PRO CDN -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
@@ -12,33 +12,55 @@
 <body>
     <div class="wrapper">
         <div class="content">
-            <div class="eInput">
-                <input type="text" placeholder="Add a task">
-                <div class="submit">
-                    <button id="add_btn">Add <i class="fa-solid fa-plus"></i></button>
-                </div>
+            <div class="text">Manage all your daily Task with ease with Taskify!</div>
+            <!-- <div class="scn"></div> -->
+            <div class="gif">
+                <img src="image/task_img.png" alt="">
             </div>
-                <div class="todo_list">
-                    <div class="todo_content">
-                        <ul class="list">
-                            <!-- <li class="listed_item">Finish Portfolio</li>
-                            <li class="listed_item">Record a video</li>
-                            <li class="listed_item">Buy Data</li> -->
-                        </ul>
-                        <div class="check">
-                            <i class="fa-solid fa-circle-check" id="check_btn"></i>
-                        </div>
-                        <div class="del">
-                            <div id="delete_btn">Delete All Task</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="create_account">
+                <button class="create_acnt" id="create_acnt">Create new account</button>
+                <p>or</p>
+                <button class="sign-in" id="googleAuth"><i class="fa-brands fa-google"></i> Sign in with Google</button>
+            </div>
         </div>
     </div>
+    <div class="emailAuth">
+        <div class="auth_content">
+            <div class="form">
+                <!-- <div class="icon">
+                    <img src="image/Taskify.png" alt="">
+                </div> -->
+                <div class="smtext"><i class="fa-solid fa-circle-chevron-left" id="back"></i> Sign in to use Taskify</div>
+                <form action="" autocomplete="off">
+                    <div class="error" id="error">Please fill the required field</div>
+                    <div class="eInput">
+                        <input type="text" name="email" placeholder="Email Address" id="email">
+                    </div>
+                    <div class="eInput">
+                        <input type="text" name="fullName" placeholder="Full Name" id="fullName">
+                    </div>
+                    <div class="eInput">
+                        <input type="password" name="password" placeholder="Password" id="password">
+                    </div>
+                    <div class="eSubmit">
+                        <button type="submit">Get Started</button>
+                    </div>
+                    <p>By signing up you are agreeing to our <span>Terms and Conditions</span></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="load_bx">
+        <div class="loading"></div>
+        <div class="img" id="check">
+            <img src="image/check.png" alt="">
+        </div>
+        <div class="load_text"></div>
+    </div>
     <script type="module" src="app.js"></script>
-    <script src="/api/apikey.js"></script>
-    <script src="/app/appID.js"></script>
-    <script src="/measurement/measure.js"></script>
-    <script src="/messages/messageSenderID.js"></script>
+    <script src="api/apikey.js"></script>
+    <script src="app/appID.js"></script>
+    <script src="measurement/measure.js"></script>
+    <script src="messages/messageSenderID.js"></script>
 </body>
 </html>

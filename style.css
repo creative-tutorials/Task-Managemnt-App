@@ -4,96 +4,228 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-:root{
-    --primiary-color: #2853fb;
-    --white-color: #fff;
-    --background-on: #eceff5;
-    --board-color: #f3f5f7;
-    --border-color: #bfbfbf;
-}
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: var(--background-on);
+  background: #eceff5;
 }
 .wrapper {
   width: 100%;
   max-width: 500px;
   padding: 30px 30px;
-  background: var(--white-color);
+  background: #fff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
-.wrapper .content .eInput {
+.wrapper .content .gif {
+  overflow: hidden;
+}
+.wrapper .content .gif img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  pointer-events: none;
+  user-select: none;
+}
+.wrapper .content .text {
+  font-size: 2em;
+  font-weight: 500;
+  text-align: center;
+}
+.wrapper .content .create_account {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
 }
-.wrapper .content .eInput input {
+.wrapper .content .create_account .create_acnt {
+  width: 100%;
+  height: 58px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  font-size: 1.2em;
+  background: #2853fb;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.wrapper .content .create_account p {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 1em;
+  position: relative;
+}
+.wrapper .content .create_account p::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 25px;
+  width: 200px;
+  height: 1.4px;
+  background: #a6a6a6;
+}
+.wrapper .content .create_account p::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 25px;
+  width: 200px;
+  height: 1.4px;
+  background: #a6a6a6;
+}
+.wrapper .content .create_account .sign-in {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  background: #26293b;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.emailAuth {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px 30px;
+  background: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.emailAuth .auth_content .form .smtext {
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #2853fb;
+}
+.emailAuth .auth_content .form form {
+  margin-top: 20px;
+}
+.emailAuth .auth_content .form form .eInput input {
   width: 100%;
   height: 58px;
   margin: 10px 0;
   padding-left: 28px;
   outline: none;
   border: none;
-  background: var(--board-color);
+  background: #f3f5f7;
   border-radius: 5px;
 }
-.wrapper .content .eInput .submit {
-    margin-left: 10px;
+.emailAuth .auth_content .form form .eSubmit {
+    margin-top: 20px;
 }
-.wrapper .content .eInput .submit button{
-    width: 100px;
-    padding: 14px;
-    outline: none;
-    border: none;
-    background: var(--primiary-color);
-    border-radius: 5px;
-    cursor: pointer;
-    color: var(--white-color);
-    font-size: 1em;
-    font-weight: 500;
-}
-.wrapper .content .todo_list .todo_content .list li{
-    list-style: none;
-    width: 100%;
-    padding: 20px;
-    background: var(--board-color);
-    border: 1px solid var(--border-color);
-    margin: 10px;
-    border-radius: 5px;
-    user-select: none;
-}
-.wrapper .content .todo_list .todo_content{
-    position: relative;
-}
-.wrapper .content .todo_list .todo_content .check{
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-}
-.wrapper .content .todo_list .todo_content .check i{
-    font-size: 1.4em;
-    color: #2853fb;
-    display: none;
-}
-.wrapper .content .todo_list .todo_content .del #delete_btn{
+.emailAuth .auth_content .form form .eSubmit button {
     width: 100%;
     height: 58px;
+    outline: none;
+    border: none;
     background: #2853fb;
-    text-align: center;
-    line-height: 58px;
-    font-size: 1.3em;
-    border-radius: 8px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 500;
     color: #fff;
     cursor: pointer;
 }
-.wrapper .content .todo_list .todo_content .del{
+.emailAuth .auth_content .form form p{
+    margin-top: 20px;
+    font-size: 0.9em;
+    width: 90%;
+    color: #808080;
+}
+.emailAuth .auth_content .form form p span{
+    font-weight: 600;
+    color: #2853fb;
+    cursor: pointer;
+}
+#back{
+    color: rgba(152, 186, 219, 0.925);
+    cursor: pointer;
+}
+.error{
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
     display: none;
 }
-li.active{
-    text-decoration: line-through;
+/*  */
+.emailAuth{
+    display: none;
+}
+.wrapper.hide{
+    display: none;
+}
+.emailAuth.show{
+    display: block;
+}
+/*  */
+.error.invalid{
+    display: block;
+}
+.emailAuth .auth_content .form form .eInput input.invalid{
+    border: 2px solid tomato;
+    animation: shake 0.1s linear;
+    position: relative;
+}
+@keyframes shake {
+    0%{
+        left: 0;
+        right: 0;
+    }
+    50%{
+        left: 10px;
+        right: -10px;
+    }
+}
+/*  */
+.load_bx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #26293b;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.loading{
+    width: 200px;
+    height: 200px;
+    border: 10px solid #2853fb;
+    border-radius: 50%;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    animation: rotate 0.9s linear infinite;
+}
+@keyframes rotate {
+    100%{
+        transform: rotate(365deg);
+    }
+}
+.load_bx .img img{
+    width: 200px;
+    height: 200px;
+}
+.load_bx .load_text{
+    margin-top: 30px;
+    font-size: 2em;
+    font-weight: 500;
+    color: #fff;
+}
+.load_bx .img{
+    display: none;
+}
+.load_bx.active{
+    display: flex;
 }
