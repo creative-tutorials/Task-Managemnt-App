@@ -16,10 +16,10 @@ import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: API_KEY,
-  authDomain: "realtimetodoapp-2613f.firebaseapp.com",
-  databaseURL: "https://realtimetodoapp-2613f-default-rtdb.firebaseio.com",
-  projectId: "realtimetodoapp-2613f",
-  storageBucket: "realtimetodoapp-2613f.appspot.com",
+  authDomain: DOMAIN,
+  databaseURL: DATABASE_URL,
+  projectId: PROJECT_ID,
+  storageBucket: STORAGE,
   messagingSenderId: SENDER_ID,
   appId: APP_ID,
   measurementId: MEASUREMENT_ID
@@ -30,61 +30,43 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore();
 const database = getDatabase(app);
-  
 
 submit.addEventListener("click", (e) => {
-    let input = eInput.value;
-    
-    let newElement = document.createElement("li");
-    console.log(newElement);
-  
+  let input = eInput.value;
 
-    listDiv.appendChild(newElement);
-    newElement.textContent = input;
+  let newElement = document.createElement("li");
+  console.log(newElement);
 
-    delete_btn.style.display = 'block';
-    check_btn.style.display = 'block';
-    delete_btn.addEventListener("click", (e) => {
-      // listDiv.removeChild(newElement);
-      removeElements(document.querySelectorAll('li'));
-      function removeElements(newElement){
-        for(var i = 0; i < newElement.length; i++){
-          newElement[i].parentNode.removeChild(newElement[i]);
-        }
+  listDiv.appendChild(newElement);
+  newElement.textContent = input;
+
+  delete_btn.style.display = 'block';
+  check_btn.style.display = 'block';
+  delete_btn.addEventListener("click", (e) => {
+    removeElements(document.querySelectorAll('li'));
+    function removeElements(newElement){
+      for (var i = 0; i < newElement.length; i++) {
+        newElement[i].parentNode.removeChild(newElement[i]);
+      }
     }
     delete_btn.style.display = 'none';
     check_btn.style.display = 'none';
-    });
-    check_btn.addEventListener("click", (e) => {
-      // let text = "";
-      sta(document.querySelectorAll('li'));
-      function sta(newElement){
-        for(var i = 0; i < newElement.length; i++){
-          newElement[i].style.color = '#a6a6a6';
-          newElement[i].classList.add("active");
-        }
+    console.clear();
+  });
+  check_btn.addEventListener("click", (e) => {
+    sta(document.querySelectorAll('li'));
+    function sta(newElement){
+      for (var i = 0; i < newElement.length; i++) {
+        newElement[i].style.color = '#a6a6a6';
+        newElement[i].classList.add("active");
       }
+    }
+  });
+  writeUserData();
+  function writeUserData(userId, name, email) {
+    const db = getDatabase();
+    set(ref(db, 'Todo_list/'), { //setting the database and referecning the Todolist form data into the appended todo i.e getting the input value from the input-table and putting that value into the realtime databse as a side data named Todo
+      Todo: eInput.value,
     });
-
-
-
-    
-    // let userData = input;
-    // let getLocalStorage = localStorage.getItem("Todo");
-    // if(getLocalStorage == null) {
-      //     listArr = [];
-    // }else{
-    //     listArr == JSON.parse(getLocalStorage);
-    // }
-    // listArr.push(userData);
-    // localStorage.setItem("Todo", JSON.stringify(listArr));
-
-    writeUserData();
-    function writeUserData(userId, name, email) {
-        const db = getDatabase();
-        set(ref(db, 'users/' + userId), {
-          Todo: eInput.value,
-          email: "",
-        });
-      }
-    });
+  }
+});
