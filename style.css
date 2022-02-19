@@ -23,15 +23,15 @@ body {
   max-width: 500px;
   padding: 30px 30px;
   background: var(--white-color);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 4px rgba(0,0,0,0.2);
   border-radius: 10px;
 }
-.wrapper .content .eInput {
+.wrapper .content .eInput{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.wrapper .content .eInput input {
+.wrapper .content .eInput input{
   width: 100%;
   height: 58px;
   margin: 10px 0;
@@ -41,59 +41,68 @@ body {
   background: var(--board-color);
   border-radius: 5px;
 }
-.wrapper .content .eInput .submit {
-    margin-left: 10px;
+.wrapper .content .eInput .submit{
+  margin-left: 10px;
 }
 .wrapper .content .eInput .submit button{
-    width: 100px;
-    padding: 14px;
-    outline: none;
-    border: none;
-    background: var(--primiary-color);
-    border-radius: 5px;
-    cursor: pointer;
-    color: var(--white-color);
-    font-size: 1em;
-    font-weight: 500;
+  width: 100px;
+  padding: 14px;
+  outline: none;
+  border: none;
+  background: var(--primiary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--white-color);
+  font-size: 1em;
+  font-weight: 500;
 }
 .wrapper .content .todo_list .todo_content .list li{
-    list-style: none;
-    width: 100%;
-    padding: 20px;
-    background: var(--board-color);
-    border: 1px solid var(--border-color);
-    margin: 10px;
-    border-radius: 5px;
-    user-select: none;
+  list-style: none;
+  width: 100%;
+  padding: 20px;
+  background: var(--board-color);
+  border: 1px solid var(--border-color);
+  margin: 10px;
+  border-radius: 5px;
+  user-select: none;
 }
 .wrapper .content .todo_list .todo_content{
-    position: relative;
+  position: relative;
 }
 .wrapper .content .todo_list .todo_content .check{
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
 }
 .wrapper .content .todo_list .todo_content .check i{
-    font-size: 1.4em;
-    color: #2853fb;
-    display: none;
+  font-size: 1.4em;
+  color: var(--primiary-color);
+  display: none;
 }
 .wrapper .content .todo_list .todo_content .del #delete_btn{
-    width: 100%;
-    height: 58px;
-    background: #2853fb;
-    text-align: center;
-    line-height: 58px;
-    font-size: 1.3em;
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
+  width: 100%;
+  height: 58px;
+  background: var(--primiary-color);
+  text-align: center;
+  line-height: 58px;
+  font-size: 1.3em;
+  border-radius: 8px;
+  color: var(--white-color);
+  cursor: pointer;
 }
 .wrapper .content .todo_list .todo_content .del{
-    display: none;
+  display: none;
 }
 li.active{
-    text-decoration: line-through;
+  text-decoration: line-through;
+}
+.list{
+  height: 100%;
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.list::-webkit-scrollbar{
+  width: 0px;
 }
