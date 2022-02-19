@@ -13,23 +13,19 @@
     <div class="wrapper">
         <div class="content">
             <div class="text">Manage all your daily Task with ease with Taskify!</div>
-            <!-- <div class="scn"></div> -->
-            <div class="gif">
-                <img src="image/task_img.png" alt="">
-            </div>
-            <div class="create_account">
-                <button class="create_acnt" id="create_acnt">Create new account</button>
-                <p>or</p>
-                <button class="sign-in" id="googleAuth"><i class="fa-brands fa-google"></i> Sign in with Google</button>
+                <div class="gif">
+                    <img src="image/task_img.png" alt="">
+                </div>
+                <div class="create_account">
+                    <button class="create_acnt" id="create_acnt">Create new account</button>
+                    <p>or</p>
+                    <button class="sign-in" id="googleAuth"><i class="fa-brands fa-google"></i> Sign in with Google</button>
             </div>
         </div>
     </div>
     <div class="emailAuth">
         <div class="auth_content">
             <div class="form">
-                <!-- <div class="icon">
-                    <img src="image/Taskify.png" alt="">
-                </div> -->
                 <div class="smtext"><i class="fa-solid fa-circle-chevron-left" id="back"></i> Sign in to use Taskify</div>
                 <form action="" autocomplete="off">
                     <div class="error" id="error">Please fill the required field</div>
@@ -52,15 +48,12 @@
     </div>
     <div class="load_bx">
         <div class="loading"></div>
-        <div class="img" id="check">
-            <img src="image/check.png" alt="">
+            <div class="img" id="check">
+                <img src="image/check.png" alt="">
         </div>
         <div class="load_text"></div>
     </div>
     <script type="module" src="app.js"></script>
-    <script src="api/apikey.js"></script>
-    <script src="app/appID.js"></script>
-    <script src="measurement/measure.js"></script>
-    <script src="messages/messageSenderID.js"></script>
+    <script src="tokens/firebase.js"></script>
 </body>
 </html>
