@@ -3,7 +3,7 @@
 In this app I've used Firebase and JavaScript
 to be able to use firebase you will have to initialize firebase
 
-you can start intializing your firebase app by installing it using <i>npm</i>
+you can start intializing your firebase app by installing it using <i>`npm`</i>
 <br>
 
 ```bash
